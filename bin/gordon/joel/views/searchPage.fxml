@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gordon.joel.controllers.searchPatientController">
+   <children>
+      <Label text="Search for Patient" />
+      <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label text="First Name" />
+            <TextField />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label text="Last Name" />
+            <TextField />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label text="Patient ID" />
+            <TextField />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label text="Date of Birth" />
+            <TextField promptText="MM/DD/YYYY" />
+            <DatePicker />
+         </children>
+      </HBox>
+      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="backToMain" mnemonicParsing="false" onAction="#goBackClick" text="Back" />
+   </children>
+</VBox>
