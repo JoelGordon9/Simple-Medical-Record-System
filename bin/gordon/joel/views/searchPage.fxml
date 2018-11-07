@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -11,29 +12,42 @@
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label text="First Name" />
-            <TextField />
+            <TextField fx:id="firstName" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label text="Last Name" />
-            <TextField />
+            <TextField fx:id="lastName" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label text="Patient ID" />
-            <TextField />
+            <TextField fx:id="patientID" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label text="Date of Birth" />
-            <TextField promptText="MM/DD/YYYY" />
-            <DatePicker />
+            <DatePicker fx:id="birthday" />
          </children>
       </HBox>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="backToMain" mnemonicParsing="false" onAction="#goBackClick" text="Back" />
+      <HBox alignment="CENTER" prefHeight="10.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="search" mnemonicParsing="false" onAction="#searchPatient" text="Search">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="backToMain" mnemonicParsing="false" onAction="#goBackClick" text="Back">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <ListView fx:id="resultList" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="select" mnemonicParsing="false" onAction="#selectPatient" text="Select" />
    </children>
 </VBox>

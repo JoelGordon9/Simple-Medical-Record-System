@@ -41,8 +41,11 @@ public class addNewPatientController  {
 		lastName = last.getText();
 		dob = birthday.getValue();
 		id = ID.getText();
-		
-		BasicPatientData.addNewPatient(firstName, lastName, dob.toString(), id);
+		if(dob == null)
+			BasicPatientData.addNewPatient(firstName, lastName, "", id);
+		else
+			BasicPatientData.addNewPatient(firstName, lastName, dob.toString(), id);
+		MiscData.writeNewID();
 		
 		System.out.println("Patient Added, Go back");
 		try {

@@ -18,9 +18,70 @@ import javafx.scene.Scene;
 
 public class BasicPatientData {
 	
-	public static void addNewPatient(String firstName, String lastName, String birthday, String ID) {
+	public static JSONArray searchPatient(String searchFirst, String searchLast, String searchDOB, String searchID) {
 		String dataFolderPath = "./Data";
 		String patientListPath = dataFolderPath + "/patientList.txt";
+		JSONArray results = new JSONArray();
+		
+		searchFirst = searchFirst.toLowerCase();
+		searchLast = searchLast.toLowerCase();
+		searchDOB = searchDOB.toLowerCase();
+		searchID = searchID.toLowerCase();
+		
+		File f = new File(patientListPath);
+		File dir = new File(dataFolderPath);
+		if(!dir.exists()) {
+			System.out.println("Error, directory does not exist");
+		}
+		if(!f.exists()) {
+			System.out.println("Error, file does not exist");
+		}
+		else {
+			JSONParser jsonParser = new JSONParser();
+			try{
+				FileReader reader = new FileReader(patientListPath);
+				Object jsonObj = jsonParser.parse(reader);
+				JSONArray patientList = (JSONArray) jsonObj;
+				reader.close();
+				
+				String lastTemp, firstTemp, dobTemp, IDTemp;
+				JSONObject tempObj;
+				for(int i = 0; i < patientList.size(); i++) {
+					tempObj = (JSONObject)patientList.get(i);
+					lastTemp = (String) tempObj.get("last");
+					firstTemp = (String) tempObj.get("first");
+					dobTemp = (String) tempObj.get("birthday");
+					IDTemp = (String) tempObj.get("ID");
+					
+					if(lastTemp.indexOf(searchLast) >= 0 && firstTemp.indexOf(searchFirst) >= 0 && dobTemp.indexOf(searchDOB) >= 0 && IDTemp.indexOf(searchID) >= 0) {
+						results.add(tempObj);
+					}
+				}
+//				System.out.println(results.toString());
+				
+			} catch (FileNotFoundException e) {
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        } catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+		
+		return results;
+	}
+	
+	
+	public static void addNewPatient(String firstName, String lastName, String birthday, String ID) {
+		firstName = firstName.toLowerCase();
+		lastName = lastName.toLowerCase();
+		birthday = birthday.toLowerCase();
+		ID = ID.toLowerCase();
+		
+		String dataFolderPath = "./Data";
+		String patientListPath = dataFolderPath + "/patientList.txt";
+		String patientFolder = dataFolderPath + "/" + ID;
 		JSONObject obj = new JSONObject();
 		obj.put("first", firstName);
 		obj.put("last", lastName);
@@ -28,12 +89,15 @@ public class BasicPatientData {
 		obj.put("ID", ID);
 		
 		System.out.print(obj.toString());
-		System.out.println("asdfasdfasdfasdf");
 		
 		File f = new File(patientListPath);
 		File dir = new File(dataFolderPath);
+		File patientDir = new File(patientFolder);
 		if(!dir.exists()) {
 			dir.mkdir();
+		}
+		if(!patientDir.exists()) {
+			patientDir.mkdir();
 		}
 		if(!f.exists()) {
 			JSONArray jsonArray = new JSONArray();

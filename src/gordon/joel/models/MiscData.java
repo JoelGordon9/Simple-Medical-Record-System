@@ -11,7 +11,52 @@ import org.json.simple.JSONArray;
 
 public class MiscData {
 	
+	/**
+	 * This method simply reads the patient count and returns the count+1
+	 * @return
+	 */
 	public static String getNewID() {
+		String dataFolderPath = "./Data";
+		String patientCount = dataFolderPath + "/patientCount.txt";
+		int count = 0;
+		
+		File f = new File(patientCount);
+		File dir = new File(dataFolderPath);
+		if(!dir.exists()) {
+			dir.mkdir();
+		}
+		if(!f.exists()) {
+			count = 1;
+			FileWriter fw;
+			try {
+				f.createNewFile();
+				fw = new FileWriter(f, true);
+				fw.write(Integer.toString(count));
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			BufferedReader reader;
+			try {
+				reader = new BufferedReader(new FileReader(patientCount));
+				count = Integer.parseInt(reader.readLine()) + 1; 
+				reader.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return Integer.toString(count);
+	}
+	
+	/**
+	 * This method will get read the patient count increment it, write the new count, and return the new count.
+	 * @return
+	 */
+	public static String writeNewID() {
 		String dataFolderPath = "./Data";
 		String patientCount = dataFolderPath + "/patientCount.txt";
 		int count = 0;
