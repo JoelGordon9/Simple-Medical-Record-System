@@ -82,6 +82,8 @@ public class BasicPatientData {
 		String dataFolderPath = "./Data";
 		String patientListPath = dataFolderPath + "/patientList.txt";
 		String patientFolder = dataFolderPath + "/" + ID;
+		String patientVisitList = patientFolder + "/visits";
+		String patientInfo = patientFolder + "/patientInfo.txt";
 		JSONObject obj = new JSONObject();
 		obj.put("first", firstName);
 		obj.put("last", lastName);
@@ -93,11 +95,14 @@ public class BasicPatientData {
 		File f = new File(patientListPath);
 		File dir = new File(dataFolderPath);
 		File patientDir = new File(patientFolder);
+		File visitDir = new File(patientVisitList);
+		File patientInfoPath = new File(patientInfo);
 		if(!dir.exists()) {
 			dir.mkdir();
 		}
 		if(!patientDir.exists()) {
 			patientDir.mkdir();
+			visitDir.mkdir();
 		}
 		if(!f.exists()) {
 			JSONArray jsonArray = new JSONArray();
@@ -131,6 +136,18 @@ public class BasicPatientData {
 	        } catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		FileWriter fw;
+		try {
+			patientInfoPath.createNewFile();
+			fw = new FileWriter(patientInfoPath, true);
+			fw.write(firstName + System.lineSeparator());
+			fw.write(lastName + System.lineSeparator());
+			fw.write(birthday + System.lineSeparator());
+			fw.write(ID + System.lineSeparator());
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	
 	}

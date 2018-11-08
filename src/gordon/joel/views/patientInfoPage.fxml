@@ -67,12 +67,17 @@
             </Label>
          </children>
       </HBox>
+      <Button fx:id="newVisit" mnemonicParsing="false" onAction="#addNewVisit" text="New Visit">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
       <Label text="Recent Visits">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Label>
       <ListView fx:id="recentVisits" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="back" mnemonicParsing="false" text="Back" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#exitPatientPageClick" text="Back" />
    </children>
 </VBox>
