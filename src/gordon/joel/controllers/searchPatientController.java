@@ -32,17 +32,19 @@ public class searchPatientController {
 		topics = resultList.getSelectionModel().getSelectedItems();
 //		System.out.println(topics.toString());
 		
-		String [] patientInfo = topics.get(0).split(",");
-		
-		System.out.println("Select Patient");
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gordon/joel/views/patientInfoPage.fxml"));
-			Parent root = loader.load();
-			patientInfoController controller = loader.<patientInfoController>getController();
-			controller.setData(patientInfo[1], patientInfo[0], patientInfo[2], patientInfo[3]);
-			Main.getWindow().setScene(new Scene(root, 800, 800));
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(topics.size() > 0) {
+			String [] patientInfo = topics.get(0).split(",");
+			
+			System.out.println("Select Patient");
+			try {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/gordon/joel/views/patientInfoPage.fxml"));
+				Parent root = loader.load();
+				patientInfoController controller = loader.<patientInfoController>getController();
+				controller.setData(patientInfo[1], patientInfo[0], patientInfo[2], patientInfo[3]);
+				Main.getWindow().setScene(new Scene(root, 800, 800));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

@@ -37,3 +37,14 @@ public class Main extends Application {
 		return window;
 	}
 }
+
+/*
+Use this to run code before you close. That is if you want.
+
+window.setOnCloseRequest(e -> closeDisProgram());
+
+private void closeDisProgram(){
+	do stuff here
+	window.close();
+}
+*/
