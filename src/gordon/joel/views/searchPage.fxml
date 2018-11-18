@@ -8,39 +8,39 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gordon.joel.controllers.searchPatientController">
    <children>
-      <Label text="Search for Patient" />
+      <Label text="Recherche Patient / Search for Patient" />
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="First Name" />
+            <Label text="Prenom / First Name" />
             <TextField fx:id="firstName" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="Last Name" />
+            <Label text="Nom / Last Name" />
             <TextField fx:id="lastName" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="Patient ID" />
+            <Label text="Numero du Patient / Patient ID" />
             <TextField fx:id="patientID" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="Date of Birth" />
+            <Label text="Date de Naissance / Date of Birth" />
             <DatePicker fx:id="birthday" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="10.0" prefWidth="200.0">
          <children>
-            <Button fx:id="search" mnemonicParsing="false" onAction="#searchPatient" text="Search">
+            <Button fx:id="search" mnemonicParsing="false" onAction="#searchPatient" text="Recherche / Search">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="backToMain" mnemonicParsing="false" onAction="#goBackClick" text="Back">
+            <Button fx:id="backToMain" mnemonicParsing="false" onAction="#goBackClick" text="Retour / Back">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -48,6 +48,6 @@
          </children>
       </HBox>
       <ListView fx:id="resultList" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="select" mnemonicParsing="false" onAction="#selectPatient" text="Select" />
+      <Button fx:id="select" mnemonicParsing="false" onAction="#selectPatient" text="Selectioner / Select" />
    </children>
 </VBox>

@@ -73,7 +73,7 @@ public class BasicPatientData {
 	}
 	
 	
-	public static void addNewPatient(String firstName, String lastName, String birthday, String ID) {
+	public static boolean addNewPatient(String firstName, String lastName, String birthday, String ID) {
 		firstName = firstName.toLowerCase();
 		lastName = lastName.toLowerCase();
 		birthday = birthday.toLowerCase();
@@ -103,6 +103,9 @@ public class BasicPatientData {
 		if(!patientDir.exists()) {
 			patientDir.mkdir();
 			visitDir.mkdir();
+		}
+		else {
+			return true;
 		}
 		if(!f.exists()) {
 			JSONArray jsonArray = new JSONArray();
@@ -149,6 +152,7 @@ public class BasicPatientData {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return false;
 	
 	}
 }

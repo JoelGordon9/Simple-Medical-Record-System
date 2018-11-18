@@ -6,12 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gordon.joel.controllers.newVisitController">
    <children>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="First Name: ">
+            <Label text="Prenom / First Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -25,7 +24,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Last Name: ">
+            <Label text="Nom / Last Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -39,7 +38,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Date of Birth: ">
+            <Label text="Date de Naissance / Date of Birth: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -53,7 +52,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="ID: ">
+            <Label text="Numero du Patient / ID: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -67,7 +66,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Current Date">
+            <Label text="Date Actuelle / Current Date">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -86,12 +85,12 @@
       </TextArea>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="submitButton" mnemonicParsing="false" text="Submit" onAction="#submitVisit">
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitVisit" text="Soumettre / Submit">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel" onAction="#cancelNewVisit">
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelNewVisit" text="Anuler / Cancel">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>

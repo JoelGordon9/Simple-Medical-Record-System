@@ -11,6 +11,24 @@ import org.json.simple.JSONArray;
 
 public class MiscData {
 	
+	public static boolean writeCustomID(String ID) {
+		String dataFolderPath = "./Data";
+		String patientIDFolderPath = dataFolderPath + "/" + ID.toLowerCase();
+		
+		File f = new File(dataFolderPath);
+		File patientIDFolder = new File(patientIDFolderPath);
+		if(!f.exists()) {
+			f.mkdir();
+		}
+		if(!patientIDFolder.exists()) {
+			f.mkdir();
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	
 	/**
 	 * This method simply reads the patient count and returns the count+1
 	 * @return

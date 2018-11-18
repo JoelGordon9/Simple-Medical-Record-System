@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gordon.joel.controllers.patientInfoController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gordon.joel.controllers.patientInfoController">
    <children>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="First Name: ">
+            <Label text="Prenom / First Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -27,7 +27,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Last Name: ">
+            <Label text="Nom / Last Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -41,7 +41,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Date of Birth: ">
+            <Label text="Date de Nauissance / Date of Birth: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -55,7 +55,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="ID: ">
+            <Label text="Nomero du Patient / ID: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -67,25 +67,43 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="newVisit" mnemonicParsing="false" onAction="#addNewVisit" text="New Visit">
+      <Label text="Notes du Patient / Patient Notes">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
-      </Button>
-      <Label text="Recent Visits">
-         <VBox.margin>
-            <Insets top="20.0" />
-         </VBox.margin>
       </Label>
+      <TextArea fx:id="patientNotes" prefHeight="200.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </TextArea>
+      <Button fx:id="saveNotes" mnemonicParsing="false" onAction="#setPatientNotes" text="Enregistrer / Save" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Derniere Visite / Past Visits">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="newVisit" mnemonicParsing="false" onAction="#addNewVisit" text="Nouvelle Visite / New Visit">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
       <ListView fx:id="recentVisits" prefHeight="200.0" prefWidth="200.0" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#viewVisit" text="View Visit">
+            <Button mnemonicParsing="false" onAction="#viewVisit" text="Voir la visite / View Visit">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="back" mnemonicParsing="false" onAction="#exitPatientPageClick" text="Back">
+            <Button fx:id="back" mnemonicParsing="false" onAction="#exitPatientPageClick" text="Retour / Back">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>

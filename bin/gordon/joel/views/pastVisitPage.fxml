@@ -10,7 +10,7 @@
    <children>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="First Name: ">
+            <Label text="Prenom / First Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -24,7 +24,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Last Name: ">
+            <Label text="Nom / Last Name: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -38,7 +38,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="Date of Birth: ">
+            <Label text="Date de Nauissance / Date of Birth: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -52,7 +52,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="20.0" prefHeight="20.0" prefWidth="200.0">
          <children>
-            <Label text="ID: ">
+            <Label text="Numero du Patient / ID: ">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
@@ -66,7 +66,7 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="Visit File:">
+            <Label text="Note de Visite / Visit Notes:">
                <HBox.margin>
                   <Insets bottom="5.0" right="2.0" top="10.0" />
                </HBox.margin>
@@ -79,6 +79,6 @@
          </children>
       </HBox>
       <TextArea fx:id="visitNotes" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="back" mnemonicParsing="false" onAction="#backToPatientPage" text="Back" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#backToPatientPage" text="Retour / Back" />
    </children>
 </VBox>

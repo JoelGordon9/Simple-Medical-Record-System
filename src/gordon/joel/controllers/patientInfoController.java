@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import application.Main;
+import gordon.joel.models.DetailedPatientData;
 import gordon.joel.models.MiscData;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class patientInfoController {
@@ -22,6 +24,16 @@ public class patientInfoController {
 	@FXML private Label ID;
 	
 	@FXML private ListView<String> recentVisits;
+	@FXML private TextArea patientNotes;
+	
+	@FXML
+	private void initialize(){
+		patientNotes.setText(DetailedPatientData.getPatientNotes(ID.getText().toLowerCase()));
+	}
+	
+	public void setPatientNotes() {
+		DetailedPatientData.setPatientNotes(patientNotes.getText(), ID.getText().toLowerCase());
+	}
 	
 	public void setData(String firstName, String lastName, String dob, String ID) {
 		this.firstName.setText(firstName.trim());
@@ -33,6 +45,11 @@ public class patientInfoController {
 		for(int i = 0; i < listOfFiles.length; i++) {
 			recentVisits.getItems().add(listOfFiles[i].getName());
 		}
+		patientNotes.setText(DetailedPatientData.getPatientNotes(ID.toLowerCase()));
+	}
+	
+	public void getPatientNotes() {
+		
 	}
 	
 	
